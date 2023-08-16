@@ -85,3 +85,14 @@ exports.login = async (req, res) => {
     console.log(error);
   }
 }
+
+exports.logout = async (req, res) => {
+  try {
+    const removed = await User.findByIdAndDelete(req.params.UserId);
+    res.json({
+      "msg": "logout completed",
+    })
+  } catch (error) {
+    res.json({ "error": error.message });
+  }
+}

@@ -89,3 +89,14 @@ exports.list = async (req, res) => {
     return res.json({ error: error.message });
   }
 }
+
+exports.blogFindOne = async (req, res) => {
+  try {
+    const blogOne = await Blog.findOne(req.params.BlogId);
+    res.json({
+      blogOne: blogOne,
+    });
+  } catch (error) {
+    return res.json({ error: error.message });
+  }
+}
