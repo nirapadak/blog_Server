@@ -5,9 +5,9 @@ const { blog, remove, update, list, blogFindOne } = require('../controller/blog'
 const { requireSignIn, isAdmin} = require('../middleware/auth')
 
 router.post('/blog', blog);
-router.put('/blog/:blogId', update);
-router.delete('/blog/:blogId', remove);
+router.put('/update/:blogId', update);
+router.delete('/delete/:blogId', remove);
 router.get('/list', list);
-router.get('/blog/:blogId', blogFindOne);
+router.get('/one/:blogId', blogFindOne);
 
 module.exports = router
